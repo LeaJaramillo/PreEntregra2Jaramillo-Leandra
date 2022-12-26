@@ -1,0 +1,379 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0);
+}
+
+img {
+ max-width: 100%;
+ height: auto;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.titulares {
+    padding: 2rem;
+    background-color: #111;
+}
+
+header {
+    display: flex;
+    justify-content:space-between;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer {
+ margin-top: auto;
+}
+
+
+/* Este es el estilo degradado dado al texto-logo de la cabecera */
+
+.gradient-text {
+    font-size: 35px;
+    background-image: linear-gradient(75deg, #53B616, #befc03);
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+
+  /* Aquí comienza los estilos del menú */
+
+  .tabs-menu {
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+  }
+  
+  .tabs-menu input[type="radio"] {
+    display: none;
+  }
+  
+  .tabs-menu label {
+    position: relative;
+    z-index: 1;
+    width: calc(100% / 4 - 0.5rem);
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .enlace {
+    text-decoration: none;
+    color: #fff;
+  
+  }
+
+
+  .tabs-menu label:hover {
+    color: #fff;
+  }
+  
+  .tabs-menu input[type="radio"]:checked + label {
+    color: #fff;
+  }
+  
+  .tab-bg-hover {
+    position: absolute;
+    width: calc(100% / 4 - 0.5rem);
+    height: 2rem;
+    border-radius: 0.5rem;
+    background-image: linear-gradient(80deg,  #3CB616, #53B616, #befc03);
+    transition: transform 1s ease-in-out;
+   
+  }
+  
+  #tab-1:checked ~ .tab-bg-hover {
+    transform: translateX(0);
+  }
+  
+  #tab-2:checked ~ .tab-bg-hover {
+    transform: translateX(100%);
+  }
+  
+  #tab-3:checked ~ .tab-bg-hover {
+    transform: translateX(200%);
+  }
+  
+  #tab-4:checked ~ .tab-bg-hover {
+    transform: translateX(300%);
+  }
+
+
+/* Estilos del slider de imágenes infinito */
+
+.slider {
+    border: thick solid #53B616;
+    width: 100%;
+    height: 50%;
+    margin: 10px auto 0;
+    overflow:hidden;
+}
+
+.slider ul {
+    display: flex;
+    animation: cambio 10s infinite ease-in-out;
+    width: 400%; 
+    height: fit-content;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+   
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+
+@keyframes cambio {
+  0% {margin-left: 0;}
+  20% {margin-left: 0;}
+
+  25% {margin-left: -100%;}
+  45% {margin-left: -100%;}
+ 
+  50% {margin-left: -200%;}
+  70% {margin-left: -200%;}
+
+  75% {margin-left: -300%;}
+  100% {margin-left: -300%;}
+  
+  
+}
+
+
+/* Estilos bloque de info Home */
+
+
+
+.flex-item {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 20px;
+}
+
+.flex-item p {
+  display: flex;
+  justify-content:center;
+  margin: 80px;
+  text-align:justify;
+  color: #fff;
+  font-size: 30px;
+}
+
+
+
+/* Estilos del boton flotante Whatsapp */
+
+.btn-wsp {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(0, 0, 0, 0.89);
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.btn-wsp:hover {
+  text-decoration: none;
+  background: #3CB616;
+  
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+ 
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+    font-size: 5vw;
+    animation: pulse 3.5s linear infinite;
+}
+
+
+/* Estilos del formulario */
+
+form{
+  width: 450px;
+  margin: auto;
+  background: #eee; 
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+margin: 1em auto;
+text-align: center;
+color: #3CB616;
+}
+
+
+input, textarea, select {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 7px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  font-size: 17px;
+  border: none;
+}
+label{
+  color: black;
+  font-size: 17px;
+}
+
+#name-label,
+#email-label,
+#phone-label,
+#plano-label,
+#servicio-label {
+  color: #3CB616;
+}
+
+#dropdown:hover {
+  background: #3CB616;
+}
+
+textarea{
+  resize: none;
+}
+#submit{
+  background-color: #3CB616;
+  color: white;
+  padding: 20px;
+}
+#submit:hover {
+  cursor: pointer;
+}
+
+/* Media queries */
+
+@media screen and (min-width: 576px){
+  .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }  
+
+
+  .menu ul {
+    display: flex;
+    list-style: none;
+}
+
+
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+}
+
+  .flex-item {
+    flex: 0 0 50%;
+}
+
+  .flex-order-1 {
+    order: 1;
+}
+
+  .flex-row-reverse {
+    flex-direction:row-reverse;
+}
+
+
+}
+
+
+@media screen and (min-width: 360px) {
+  form{
+      width: 90%;
+  }
+
+  .slider {
+    width: 90%;
+  }
+
+  .flex-item p {
+    font-size: medium;
+    margin: 20px;
+  }
+
+}
+
+@media (width > 820px) {
+  
+.slider {
+  object-fit: cover;
+}
+
+.slider img {
+  object-fit: cover;
+}
+
+.flex-item p {
+  font-size: 25px;
+  margin: 20%;
+}
+
+.flex-item {
+  margin-left: -10%;
+}
+
+form{
+  width: 450px;
+}
+
+}
+  
+
+
+
